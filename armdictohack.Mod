@@ -1,4 +1,4 @@
-MODULE armdicto;
+MODULE armdictohack;
 
 IMPORT Files, Out := Console,
        ArmsciiUTF;
@@ -107,4 +107,4 @@ BEGIN
 Go;
 
 
-END armdicto.
+END armdictohack.

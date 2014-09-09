@@ -2,7 +2,7 @@
 
 
 all:
-	/opt/voc/bin/voc -s ArmsciiUTF.Mod armdicto.Mod -M
+	/opt/voc/bin/voc -s ArmsciiUTF.Mod armdictohack.Mod -M
 
 clean:
 	rm *.sym

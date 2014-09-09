@@ -6,6 +6,17 @@
 # unshield	- installshieald cab file extractor
 # gnu make	- standard tool to compile source trees
 # voc 		- vishap oberon compiler
+# stardict	- international dictionary supporting fuzzy and glob style matching
+
+# stardict is not necessary to use produced dictionaries.
+# many other dictionaries support produced format.
+# stardict is necessary in order to produce dictionary files.
+# we use stardict_tabfile utility in order to convert generated tab separated file
+# into dictionary form.
+
+# in order to get stardict_tabfile on Gentoo like systems
+# one needs to emerge stardict with "tools" USE flag set.
+
 
 #need to build hack
 make
@@ -45,7 +56,7 @@ replaceByte maintest.dat 1815116 0
 
 #running hack
 
-./armdicto
+./armdictohack
 
 #removing duplicate entries
 cat out.txt | sort | uniq > armdicto.txt
@@ -53,3 +64,12 @@ cat out.txt | sort | uniq > armdicto.txt
 #preparing dict
 stardict_tabfile armdicto.txt
 
+# move to new directory
+mkdir -p armdicto
+mv armdicto.dict armdicto.idx armdicto.ifo armdicto
+
+#clean
+make clean
+#rm ArmDicto v1.1.rar
+rm -rf ArmDicto1.1 fonts Program_Executable_Files data1.cab out.txt main.dat maintest.dat armdictohack
+#rm armdicto.txt
