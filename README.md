@@ -12,6 +12,10 @@ We need it on ARM, on other platforms than Wintel. Thus now, after figuring out 
 
 some info about this work in Armenian [here](http://norayr.arnet.am/weblog/2014/09/09/) - with screenshots and explanations.
 
+As it is obvious frem the [screenshot](http://norayr.arnet.am/weblog/wp-content/uploads/2014/09/armdicto_about.png) special thanks to Lusine Harutiunian and Anna Mkhitarian. I guess they have compiled the dictionary initially.
+
+This is how dictionary [looks](http://norayr.arnet.am/weblog/wp-content/uploads/2014/09/20140909143744.jpg) on my Jolla Sailfish device.
+
 prerequisites
 =============
 
