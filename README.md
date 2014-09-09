@@ -10,6 +10,8 @@ This hack brings the database to our time.
 
 We need it on ARM, on other platforms than Wintel. Thus now, after figuring out how the database works and fixing database bugs (yep, I found some) we can use the dictionary on any platform and almost any os.
 
+some info about this work in Armenian [here](http://norayr.arnet.am/weblog/2014/09/09/)
+
 prerequisites
 =============
 
