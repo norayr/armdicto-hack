@@ -20,9 +20,10 @@ function replaceByte() {
     printf "$(printf '\\x%02X' $3)" | dd of="$1" bs=1 seek=$2 count=1 conv=notrunc &> /dev/null
         }
 #fixing bugs in maintest.dat
+# let me explain this. the word gobble contained incorrect "o", not latin, but ARMSCII armenian letter o for some reason. That's why even stock armdicto was unable to show that translation. fixing bf with 6f (111) - to the real ASCII o letter.
 # 002170AB is 2191531
 replaceByte maintest.dat 2191531 111 
-
+#same here, instead of latin o, armscii o by mistake
 # 002dc5d3 is 2999763
 replaceByte maintest.dat 2999763 111
 
