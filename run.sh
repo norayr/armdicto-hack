@@ -1,9 +1,18 @@
+#prerequisites
+# gnu coreutils	- standnard gnu file utilities
+# bash		- the standard gnu bourne again shell
+# wget		- network utility to retrieve files from www
+# rar		- rar compressor/uncompressor
+# unshield	- installshieald cab file extractor
+# gnu make	- standard tool to compile source trees
+# voc 		- vishap oberon compiler
+
 #need to build hack
 make
 
 #getting armdicto
 
-wget http://users.freenet.am/~osprog1/ArmDicto%20v1.1.rar
+wget -c http://users.freenet.am/~osprog1/ArmDicto%20v1.1.rar
 
 #unrar
 rar x "ArmDicto v1.1.rar"
@@ -38,6 +47,9 @@ replaceByte maintest.dat 1815116 0
 
 ./armdicto
 
+#removing duplicate entries
+cat out.txt | sort | uniq > armdicto.txt
+
 #preparing dict
-stardict_dictbuilder -o test out.txt
+stardict_tabfile armdicto.txt
 
