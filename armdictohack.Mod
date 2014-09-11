@@ -17,9 +17,37 @@ BEGIN
    Files.WriteBytes(r, str^, LEN(str^)-1);
    Out.String(str^);
 END WriteString;
-(*
+
 PROCEDURE Fix(VAR r : Files.Rider; VAR f : Files.File);
+VAR WrongYev, RightYev, WrongExclam, RightExclam : CHAR;
+i : LONGINT;
+ch, lch : CHAR;
 BEGIN
+
+   WrongYev := 0A8X;
+   RightYev := 0A2X;
+   WrongExclam := 07EX; (* ~ *)
+   RightExclam := 0AFX;
+
+   i := 0; lch := ' ';
+   Files.Set(r, f, i);
+
+   WHILE ~ r.eof DO
+      Files.Set(r, f, i);
+      Files.Read(r, ch);
+      IF ch = WrongYev THEN
+	 Files.Set(r, f, i);
+         Files.WriteByte(r, RightYev);
+	 (*Files.Set(r, f, i+1);*)
+      END;
+      IF (ch = WrongExclam) & (lch > 0A2X) THEN
+         Files.Set(r, f, i);
+         Files.WriteByte(r, RightExclam); 
+         (*Files.Set(r, f, i+1);  *)
+      END;
+      lch := ch;
+      INC(i);
+   END;
 
    Files.Set(r, f, 2191531); (* 002170AB is 2191531 *)
    Files.WriteByte(r, 111); (* replace errorneus armscii-8 o with latin o *)
@@ -29,11 +57,16 @@ BEGIN
 
    Files.Set(r, f, 1815116);
    Files.WriteByte(r, 0);
-
+   
+(*
    Files.Set(r, f, 2245510); (* fix "hello" translation at address 00224386H *)
-   Files.WriteByte(r, 175) (* af is ՜ in armscii-8 *)
+   Files.WriteByte(r, 0A2X); (* af is ՜ in armscii-8 *)
+
+   Files.Set(r, f, 5465087);
+   Files.WriteByte(r, 0A2X);
+   *)
 END Fix;
-*)
+
 PROCEDURE Go;
    VAR f, fo : Files.File;
        r, ro : Files.Rider;
@@ -44,7 +77,7 @@ PROCEDURE Go;
 BEGIN
    f := Files.Old(maindat);
    IF f # NIL THEN
-  (*    Fix(r, f);*)
+      Fix(r, f);
       Files.Set(r, f, 0);
       
       

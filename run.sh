@@ -34,10 +34,10 @@ cp ArmDicto1.1/data1.cab .
 # cabextract
 unshield x data1.cab
 cp Program_Executable_Files/Data/main.dat .
-#cp main.dat maintest.dat
+cp main.dat maintest.dat
 
 #fix all և 
-sed 's/\xa8/\xa2/g' main.dat > maintest.dat
+#sed 's/\xa8/\xa2/g' main.dat > maintest.dat
 
 function replaceByte() {
     printf "$(printf '\\x%02X' $3)" | dd of="$1" bs=1 seek=$2 count=1 conv=notrunc &> /dev/null
@@ -47,41 +47,41 @@ function replaceByte() {
 #That's why even stock armdicto was unable to show that translation. 
 #fixing bf with 6f (111) - to the real ASCII o letter.
 # 002170AB is 2191531
-replaceByte maintest.dat 2191531 111 
+#replaceByte maintest.dat 2191531 111 
 #same here, instead of latin o, armscii o by mistake
 # 002dc5d3 is 2999763
-replaceByte maintest.dat 2999763 111
+#replaceByte maintest.dat 2999763 111
 
 # word flance ends with strange b0 instead of 00,
 # 001bb24c is 1815116
-replaceByte maintest.dat 1815116 0
+#replaceByte maintest.dat 1815116 0
 
 # hello
 #fixing ~ in hello translation
-replaceByte maintest.dat 2245510 175
+#replaceByte maintest.dat 2245510 175
 
 # zulu
 #00726D97, fixing 2d (-) with ad(֊)
-replaceByte maintest.dat 7499159 173
+#replaceByte maintest.dat 7499159 173
 
 # 00726D9AH, fixing a8, should be և
-#replaceByte maintest.dat 7499162 162
+###replaceByte maintest.dat 7499162 162
 
 # ahem
 # 0002802f, 7e -> af (~)
-replaceByte maintest.dat 163887 175
+#replaceByte maintest.dat 163887 175
 
 # alas
 # 00029fe8, 7e -> af (~)
-replaceByte maintest.dat 172008 175 
+#replaceByte maintest.dat 172008 175 
 
 # cheer
 # 000b1274 ~
-replaceByte maintest.dat 725620 175
+#replaceByte maintest.dat 725620 175
 
 # cherry-pie
 # 005363ff a8 -> և (162)
-#replaceByte maintest.dat 5465087 162
+###replaceByte maintest.dat 5465087 162
 
 #running hack
 
