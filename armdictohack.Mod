@@ -1,6 +1,6 @@
 MODULE armdictohack;
 
-IMPORT Files, Out := Console,
+IMPORT Files, Out := Console, SYSTEM,
        ArmsciiUTF;
 
 CONST maindat = "maintest.dat";
@@ -17,7 +17,23 @@ BEGIN
    Files.WriteBytes(r, str^, LEN(str^)-1);
    Out.String(str^);
 END WriteString;
+(*
+PROCEDURE Fix(VAR r : Files.Rider; VAR f : Files.File);
+BEGIN
 
+   Files.Set(r, f, 2191531); (* 002170AB is 2191531 *)
+   Files.WriteByte(r, 111); (* replace errorneus armscii-8 o with latin o *)
+
+   Files.Set(r, f, 2999763); (* 002dc5d3 is 2999763 *)
+   Files.WriteByte(r, 111); (* same here, armscii-8 "o" letter in English word should be latin *)
+
+   Files.Set(r, f, 1815116);
+   Files.WriteByte(r, 0);
+
+   Files.Set(r, f, 2245510); (* fix "hello" translation at address 00224386H *)
+   Files.WriteByte(r, 175) (* af is ՜ in armscii-8 *)
+END Fix;
+*)
 PROCEDURE Go;
    VAR f, fo : Files.File;
        r, ro : Files.Rider;
@@ -28,6 +44,7 @@ PROCEDURE Go;
 BEGIN
    f := Files.Old(maindat);
    IF f # NIL THEN
+  (*    Fix(r, f);*)
       Files.Set(r, f, 0);
       
       
