@@ -57,7 +57,22 @@ BEGIN
 
    Files.Set(r, f, 1815116);
    Files.WriteByte(r, 0);
+
+   (* wrong translation of "lentil", it is "սուպ" instead of "ոսպ" *)
+
+   Files.Set(r, f, 2782295);
+   Files.WriteByte(r, (*225*)0E1X); (* ո *)
+
+   Files.Set(r, f, 2782296);
+   Files.WriteByte(r, (*235*)0EBX); (* ս *)
+
+   Files.Set(r, f, 2782297);
+   Files.WriteByte(r, (*229*)0E5X);  (* պ *)
+  
+   Files.Set(r, f, 2782298);
+   Files.WriteByte(r, 0);  (* nothing *)
    
+
 (*
    Files.Set(r, f, 2245510); (* fix "hello" translation at address 00224386H *)
    Files.WriteByte(r, 0A2X); (* af is ՜ in armscii-8 *)
