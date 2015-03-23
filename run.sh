@@ -23,7 +23,7 @@ make
 
 #getting armdicto
 
-#wget -c http://users.freenet.am/~osprog1/ArmDicto%20v1.1.rar
+wget -c http://users.freenet.am/~osprog1/ArmDicto%20v1.1.rar
 
 #unrar
 rar x "ArmDicto v1.1.rar"
@@ -99,7 +99,7 @@ mv armdicto.dict armdicto.idx armdicto.ifo armdicto
 
 #clean
 make clean
-#rm ArmDicto v1.1.rar
+rm ArmDicto v1.1.rar
 rm -rf ArmDicto1.1 fonts Program_Executable_Files data1.cab 
 rm -rf out.tab main.dat maintest.dat armdictohack
 #rm armdicto.tab

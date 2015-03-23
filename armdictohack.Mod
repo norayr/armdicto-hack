@@ -137,23 +137,28 @@ BEGIN
            
 		    IF ord = 44 (* comma *) THEN
 		       Files.Read(r, ch);
-                       IF ch # ' ' THEN
-                          WriteChar(ro, ' ');
-			  ord := ORD(ch);
-			  IF ord >= 162 THEN
-			     str := ArmsciiUTF.A2U(ch);
-			     WriteString(ro, str)
-			  ELSE
-                             WriteChar(ro, ch);
-			  END
-		       ELSE
-		          WriteChar(ro, ' ');
+		       ord := ORD(ch);
+		       IF ord # 0 THEN
+                          IF ch # ' ' THEN
+                             WriteChar(ro, ' ');
+			     ord := ORD(ch);
+			     IF ord >= 162 THEN
+			        str := ArmsciiUTF.A2U(ch);
+			        WriteString(ro, str)
+			     ELSE
+                                WriteChar(ro, ch);
+			     END
+		          ELSE
+		             WriteChar(ro, ' ');
+		          END
 		       END
 		    END;
 
 
-	         Files.Read(r, ch); 
-	         ord := ORD(ch);
+	         IF ord # 0 THEN
+		    Files.Read(r, ch); 
+	            ord := ORD(ch);
+		 END;
 		 IF ord = 0 THEN (* skip everything before three zeros *)
 		    i := 0;
 		    REPEAT
