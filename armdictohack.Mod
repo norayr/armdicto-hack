@@ -116,9 +116,6 @@ BEGIN
                   ord := ORD(ch);
                   IF ord # 0 THEN
 	             WriteChar(ro, ch);
-	          (*ELSE
-	             Files.Read(r, ch);
-                     ord := ORD(ch);*)
 	          END;
                UNTIL ord = 0;
 	       WriteChar(ro, 9X); (* write tab *)   
@@ -137,7 +134,24 @@ BEGIN
                     str := ArmsciiUTF.A2U(ch); 
 		    WriteString(ro, str);
 	         END;
-              
+           
+		    IF ord = 44 (* comma *) THEN
+		       Files.Read(r, ch);
+                       IF ch # ' ' THEN
+                          WriteChar(ro, ' ');
+			  ord := ORD(ch);
+			  IF ord >= 162 THEN
+			     str := ArmsciiUTF.A2U(ch);
+			     WriteString(ro, str)
+			  ELSE
+                             WriteChar(ro, ch);
+			  END
+		       ELSE
+		          WriteChar(ro, ' ');
+		       END
+		    END;
+
+
 	         Files.Read(r, ch); 
 	         ord := ORD(ch);
 		 IF ord = 0 THEN (* skip everything before three zeros *)
