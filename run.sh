@@ -88,10 +88,10 @@ function replaceByte() {
 ./armdictohack
 
 #removing duplicate entries
-cat out.txt | sort | uniq > armdicto.txt
+cat out.tab | sort | uniq > armdicto.tab
 
 #preparing dict
-stardict_tabfile armdicto.txt
+stardict_tabfile armdicto.tab
 
 # move to new directory
 mkdir -p armdicto

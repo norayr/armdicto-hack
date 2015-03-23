@@ -4,7 +4,7 @@ IMPORT Files, Out := Console, SYSTEM,
        ArmsciiUTF;
 
 CONST maindat = "maintest.dat";
-      outtxt  = "out.txt";
+      outtxt  = "out.tab";
 
 PROCEDURE WriteChar(VAR r : Files.Rider; ch : CHAR);
 BEGIN
@@ -72,7 +72,8 @@ BEGIN
    Files.Set(r, f, 2782298);
    Files.WriteByte(r, 0);  (* nothing *)
    
-
+   Files.Set(r, f, 1341611); (* fix latin h in word ահաւոր with armenian *)
+   Files.WriteByte(r, 0D1X);
 (*
    Files.Set(r, f, 2245510); (* fix "hello" translation at address 00224386H *)
    Files.WriteByte(r, 0A2X); (* af is ՜ in armscii-8 *)
