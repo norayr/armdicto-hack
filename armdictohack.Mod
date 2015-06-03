@@ -74,6 +74,10 @@ BEGIN
    
    Files.Set(r, f, 1341611); (* fix latin h in word ահաւոր with armenian *)
    Files.WriteByte(r, 0D1X);
+
+   (* fix "battery" translation, there should be not վիրարորանք but վիրավորանք *)
+   Files.Set(r, f, 5158573);
+   Files.WriteByte(r, 0EDX);
 (*
    Files.Set(r, f, 2245510); (* fix "hello" translation at address 00224386H *)
    Files.WriteByte(r, 0A2X); (* af is ՜ in armscii-8 *)
