@@ -78,6 +78,13 @@ BEGIN
    (* fix "battery" translation, there should be not վիրարորանք but վիրավորանք *)
    Files.Set(r, f, 5158573);
    Files.WriteByte(r, 0EDX);
+
+   (* fix "shell" translation, should be not կեղեվ but կեղեւ *)
+   Files.Set(r, f, 4046995);
+   Files.WriteByte(r, 0F5X);
+
+   Files.Set(r, f, 4047026);
+   Files.WriteByte(r, 0F5X); (* նոյնից *)
 (*
    Files.Set(r, f, 2245510); (* fix "hello" translation at address 00224386H *)
    Files.WriteByte(r, 0A2X); (* af is ՜ in armscii-8 *)
