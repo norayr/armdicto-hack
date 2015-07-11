@@ -24,7 +24,7 @@ i : LONGINT;
 ch, lch : CHAR;
 BEGIN
 
-   WrongYev := 0A8X;
+   WrongYev := 0A8X; (* https://web.archive.org/web/20010118220400/http://www.freenet.am/armnls/fonts.htm see The EV problem *)
    RightYev := 0A2X;
    WrongExclam := 07EX; (* ~ *)
    RightExclam := 0AFX;
