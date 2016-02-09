@@ -10,11 +10,11 @@ This hack brings the database to our time.
 
 We need it on ARM, on other platforms than Wintel. Thus now, after figuring out how the database works and fixing database bugs (yep, I found some) we can use the dictionary on any platform and almost any os.
 
-some info about this work in Armenian [here](http://norayr.arnet.am/weblog/2014/09/09/ասք-հաքերութեան-մասին/) - with screenshots and explanations.
+some info about this work in Armenian [here](http://norayr.am/weblog/2014/09/09/ասք-հաքերութեան-մասին/) - with screenshots and explanations.
 
-I would like to repeat thanks to unknown to me, or known only from this [screenshot](http://norayr.arnet.am/weblog/wp-content/uploads/2014/09/armdicto_about.png) Lusine Harutiunian and Anna Mkhitarian. I guess they have compiled the dictionary initially.
+I would like to repeat thanks to unknown to me, or known only from this [screenshot](http://norayr.am/weblog/wp-content/uploads/2014/09/armdicto_about.png) Lusine Harutiunian and Anna Mkhitarian. I guess they have compiled the dictionary initially.
 
-This is how dictionary [looks](http://norayr.arnet.am/weblog/wp-content/uploads/2014/09/20140909143744.jpg) on my Jolla Sailfish device.
+This is how dictionary [looks](http://norayr.am/weblog/wp-content/uploads/2014/09/20140909143744.jpg) on my Jolla Sailfish device.
 
 Ready to use dictionaries produced with this hack are available [here](https://github.com/norayr/freearmdicto)
 
