@@ -6,9 +6,19 @@ bringing dictionary to the 21 century.
 
 In 2000-2001 there was a Windows/x86 only English to Armenian dictionary program which contained ~26000 translations.
 
-This hack brings the database to our time.
+This is how it looked if running under wine:
 
-We need it on ARM, on other platforms than Wintel. Thus now, after figuring out how the database works and fixing database bugs (yep, I found some) we can use the dictionary on any platform and almost any os.
+![](http://norayr.am/weblog/wp-content/uploads/2014/09/armdicto_about.png)
+
+However wine is not the best way to run it. We need it on ARM, on other platforms than Wintel. Therefore we need it with words database separated from the program in order to be able to search for those words in other programs. Thus now, after figuring out how the database works and fixing database bugs (yep, I found some) we can use the dictionary on any platform and almost any os.
+
+Screenshot of stardict on Linux:
+
+![](http://norayr.am/weblog/wp-content/uploads/2014/09/armdicto_gobble2.png)
+
+Screenshot of sidudict under Sailfish:
+
+![](http://norayr.am/weblog/wp-content/uploads/2014/09/20140909143744.jpg)
 
 some info about this work in Armenian [here](http://norayr.am/weblog/2014/09/09/ասք-հաքերութեան-մասին/) - with screenshots and explanations.
 
