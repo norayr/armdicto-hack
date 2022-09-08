@@ -8,23 +8,23 @@ In 2000-2001 there was a Windows/x86 only English to Armenian dictionary program
 
 This is how it looked if running under wine:
 
-![](http://norayr.am/weblog/uploads/2014/09/armdicto_about.png)
+![](https://norayr.am/weblog/uploads/2014/09/armdicto_about.png)
 
 However wine is not the best way to run it. We need it on ARM, on other platforms than Wintel. Therefore we need it with words database separated from the program in order to be able to search for those words in other programs. Thus now, after figuring out how the database works and fixing database bugs (yep, I found some) we can use the dictionary on any platform and almost any os.
 
 Screenshot of stardict on Linux:
 
-![](http://norayr.am/weblog/uploads/2014/09/armdicto_gobble2.png)
+![](https://norayr.am/weblog/uploads/2014/09/armdicto_gobble2.png)
 
 Screenshot of sidudict under Sailfish:
 
-![](http://norayr.am/weblog/uploads/2014/09/20140909143744.jpg)
+![](https://norayr.am/weblog/uploads/2014/09/20140909143744.jpg)
 
-some info about this work in Armenian [here](http://norayr.am/weblog/2014/09/09/ասք-հաքերութեան-մասին/) - with screenshots and explanations.
+some info about this work in Armenian [here](https://norayr.am/weblog/2014/09/09/ասք-հաքերութեան-մասին/) - with screenshots and explanations.
 
-I would like to repeat thanks to unknown to me, or known only from this [screenshot](http://norayr.am/weblog/uploads/2014/09/armdicto_about.png) Lusine Harutiunian and Anna Mkhitarian. I guess they have compiled the dictionary initially.
+I would like to repeat thanks to unknown to me, or known only from this [screenshot](https://norayr.am/weblog/uploads/2014/09/armdicto_about.png) Lusine Harutiunian and Anna Mkhitarian. I guess they have compiled the dictionary initially.
 
-This is how dictionary [looks](http://norayr.am/weblog/uploads/2014/09/20140909143744.jpg) on my Jolla Sailfish device.
+This is how dictionary [looks](https://norayr.am/weblog/uploads/2014/09/20140909143744.jpg) on my Jolla Sailfish device.
 
 Ready to use dictionaries produced with this hack are available [here](https://github.com/norayr/freearmdicto)
 
